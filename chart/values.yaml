@@ -54,13 +54,13 @@ securityContext: {}
 service:
   type: ClusterIP
   port: 80
-  app: flask-postgres-app2
-  name: flask-postgres-service2
+  app: flask-postgres-app1
+  name: flask-postgres-service1
   tport: 5000
 
 deployment:
-  name: flask-postgres-app2
-  app:  flask-postgres-app2
+  name: flask-postgres-app1
+  app:  flask-postgres-app1
 
 
 
@@ -74,10 +74,10 @@ ingress:
   hosts:
     - host: smac.thinkpalm.info
       paths:
-        - path: /flask2
+        - path: /flask
           pathType: Prefix
           service:
-            name: flask-postgres-service2
+            name: flask-postgres-service1
             port:
               number: 80
 
